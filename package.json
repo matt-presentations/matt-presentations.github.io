@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/matt-presentations/matt-presentations.github.io#readme",
   "dependencies": {
+    "papaparse": "^4.6.0",
     "reveal.js": "^3.7.0"
   }
 }
