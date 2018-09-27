@@ -28,12 +28,17 @@ function bar(element_id, url, x_column, y_column)
 
 window.onload = function () 
 {
-  document.getElementsByClassName("chart").forEach(function (elem) 
+  var elements = document.getElementsByClassName("chart")
+  var f = function (elem) 
   {
     var plot = eval(elem.getAttribute("plot"))
-    var src = ele.getAttribute("src")
+    var src = elem.getAttribute("src")
     var x = elem.getAttribute("x")
     var y = elem.getAttribute("y")
     plot(elem.id, src, x, y);
-  });
+  };
+  for (var i = 0; i<elements.length; i++) 
+  {
+    f(elements[i]);
+  }
 }
