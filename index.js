@@ -13,11 +13,11 @@ function bar(element_id, url, x_column, y_column)
       data.map(x => console.log(x));
       var x = data.map(x => x[x_column]);
       var y = data.map(x => x[y_column]);
-      Plotly.newPlot(element_id, {
+      Plotly.newPlot(element_id, [{
         x: x,
         y: y,
         type: "bar"
-      });
+      }]);
     }
 
   })
