@@ -1,37 +1,23 @@
 
-function plot_data(element_id, url, column) 
+function bar(element_id, url, x_column, y_column) 
 {
   data = Papa.parse(url, 
   {
     download: true,
     header: true, 
+    skipEmptyLines: true,
     trimHeaders: true,
-    complete: function(results) 
-    var svgWidth = 500;
-    var svgHeight = 300;
-    var svg = d3.select(element_id)
-        .attr("width", svgWidth)
-        .attr("height", svgHeight)
-        .attr("class", "bar-chart");{
-      var data = results.data 
-      var dataset = data.map(x => x[column]);
-      var barPadding = 5;
-      var barWidth = (svgWidth / dataset.length);
-      var barChart = svg.selectAll("rect")
-          .data(dataset)
-          .enter()
-          .append("rect")
-          .attr("y", function(d) {
-              return svgHeight - d
-          })
-          .attr("height", function(d) {
-              return d;
-          })
-          .attr("width", barWidth - barPadding)
-          .attr("transform", function (d, i) {
-               var translate = [barWidth * i, 0];
-               return "translate("+ translate +")";
-          });
+    complete: function(results) { 
+      console.log(results);
+      var data = results.data;
+      data.map(x => console.log(x));
+      var x = data.map(x => x[x_column]);
+      var y = data.map(x => x[y_column]);
+      Plotly.newPlot(element_id, {
+        x: x,
+        y: y,
+        type: "bar"
+      });
     }
 
   })
