@@ -18,7 +18,7 @@ function bar(element_id, url, x_column, y_column)
         y: y,
         type: "bar"
       }
-      consoole.log(data);
+      console.log(data);
       Plotly.newPlot(element_id, [data]);
     }
 
