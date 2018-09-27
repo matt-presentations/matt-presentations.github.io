@@ -28,5 +28,12 @@ function bar(element_id, url, x_column, y_column)
 
 window.onload = function () 
 {
-  bar("data-chart", "data.csv", "x", "y")
+  document.getElementsByClassName("chart").forEach(function (elem) 
+  {
+    var plot = eval(elem.getAttribute("plot"))
+    var src = ele.getAttribute("src")
+    var x = elem.getAttribute("x")
+    var y = elem.getAttribute("y")
+    plot(elem.id, src, x, y);
+  });
 }
