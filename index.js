@@ -19,7 +19,7 @@ function bar(element_id, url, x_column, y_column)
         type: "bar"
       }
       console.log(data);
-      Plotly.newPlot(element_id, [data]);
+      Plotly.plot(element_id, [data]);
     }
 
   })
