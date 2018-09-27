@@ -24,3 +24,9 @@ function bar(element_id, url, x_column, y_column)
 
   })
 }
+
+
+window.onload = function () 
+{
+  bar("data-chart", "data.csv", "x", "y")
+}
